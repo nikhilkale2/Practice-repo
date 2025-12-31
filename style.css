@@ -5,3 +5,11 @@ ul {
 ul li {
   font-size: 2em;
 }
+ol {
+  list-style: none;
+  font-size: 30px;
+}
+ol li {
+  font-size: 2em;
+  color: red;
+}
