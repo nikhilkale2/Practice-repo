@@ -69,3 +69,38 @@ ol li {
   z-index: 0;
   color: white;
 }
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  bottom: 100px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 25px;
+  position: relative;
+  color: black;
+  width: max-content;
+  padding-bottom: 6px;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(145deg, blue, aqua, darkblue);
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+nav a:hover::after {
+  width: 100%;
+}
