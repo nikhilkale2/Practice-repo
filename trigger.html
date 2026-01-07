@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      body {
+        overflow-x: hidden;
+      }
       .page1 {
         height: 100vh;
         width: 100%;
@@ -78,9 +81,118 @@
         width: 1200px;
         height: 600px;
       }
+
+      #svgBox svg {
+        width: 100vw; /* full screen width */
+        height: 200px;
+        display: block;
+        margin-left: 400px;
+      }
+
+      .page10 {
+        height: 100vh;
+        width: 100%;
+        background-color: brown;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .page11 {
+        height: 100vh;
+        width: 100%;
+        background-color: brown;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .page12 {
+        height: 100vh;
+        width: 100%;
+        background-color: brown;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .page13 {
+        height: 100vh;
+        width: 100%;
+        background-color: brown;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .page14 {
+        height: 100vh;
+        width: 100%;
+        background-color: brown;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .page15 {
+        height: 100vh;
+        width: 100%;
+        background-color: brown;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .trigger {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-left: 330px;
+        margin-top: 150px;
+        /* flex-direction: column; */
+      }
+      .trigger img {
+        width: 300px;
+        height: 300px;
+      }
+      /* .box1 img {
+        width: 100vw;
+        margin-left: 350px;
+      }
+      .box2 img {
+        width: 100vw;
+        margin-left: 350px;
+      }
+      .box3 img {
+        width: 100vw;
+        margin-left: 350px;
+      }
+      .box4 img {
+        width: 100vw;
+        margin-left: 350px;
+      }
+      .box5 img {
+        width: 100vw;
+        margin-left: 350px;
+      }
+      .box6 img {
+        width: 100vw;
+        margin-left: 350px;
+      } */
+      #cursor {
+        width: 30px;
+        height: 30px;
+        background-color: black;
+        border-radius: 50%;
+        position: fixed;
+        z-index: 10;
+        /* box-shadow: 0 0 5px 8px black; */
+        font-size: 8px;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+      }
     </style>
   </head>
   <body>
+    <div id="cursor"></div>
     <div class="page1">
       <div id="box"></div>
     </div>
@@ -98,25 +210,103 @@
       <img
         src="https://www.bing.com/th/id/OIP.G37tgeQqSNt7v2oPfj9ltQHaE7?w=252&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
         alt=""
+        id="img1"
       />
     </div>
     <div class="page6">
       <img
         src=" https://www.bing.com/th/id/OIP.jIGSidW76D_vlYcaeSCbVwHaEo?w=244&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2 "
         alt=""
+        id="img2"
       />
     </div>
     <div class="page7">
       <img
         src=" https://www.bing.com/th/id/OIP.I4X_ilJ5O8dMg1yrVXovmQHaEo?w=245&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2 "
         alt=""
+        id="img3"
       />
     </div>
     <div class="page8">
       <img
         src="https://th.bing.com/th/id/OIP.qVL9QNcb4iNHzBerI6D3YwHaEK?w=291&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
         alt=""
+        id="img4"
       />
+    </div>
+
+    <div class="page10">
+      <img
+        src="https://th.bing.com/th/id/OIP._zqTuzT0giBSI-i3XxJ_bwHaFH?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+        alt=""
+      />
+    </div>
+    <div class="page11">
+      <img
+        src="https://th.bing.com/th/id/OIP.9Py-kn8W1Am1FPASJwoA2gHaFF?w=263&h=181&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+        alt=""
+      />
+    </div>
+    <div class="page12">
+      <img
+        src="https://th.bing.com/th/id/OIP.A2JDlW2N1DW-t73m0ChQnwHaFw?w=233&h=181&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+        alt=""
+      />
+    </div>
+    <div class="page13">
+      <img
+        src="https://th.bing.com/th/id/OIP.GTCjDWBn4hpGnuw2DsshxQHaEb?w=323&h=193&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+        alt=""
+      />
+    </div>
+    <div class="page14">
+      <img
+        src="https://th.bing.com/th/id/OIP.JItfGXxlznJRry5rQFEs5wHaFI?w=242&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+        alt=""
+      />
+    </div>
+    <div class="page15">
+      <img
+        src="https://th.bing.com/th/id/OIP.2NaenA5vUQcxkdWWCk4iqAHaEK?w=256&h=150&c=6&o=7&dpr=1.3&pid=1.7&rm=3"
+        alt=""
+      />
+    </div>
+
+    <div class="trigger">
+      <img
+        src="https://th.bing.com/th/id/OIP._zqTuzT0giBSI-i3XxJ_bwHaFH?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+        alt=""
+      />
+      <img
+        src="https://th.bing.com/th/id/OIP.9Py-kn8W1Am1FPASJwoA2gHaFF?w=263&h=181&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+        alt=""
+      />
+      <img
+        src="https://th.bing.com/th/id/OIP.A2JDlW2N1DW-t73m0ChQnwHaFw?w=233&h=181&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+        alt=""
+      />
+      <img
+        src="https://th.bing.com/th/id/OIP.GTCjDWBn4hpGnuw2DsshxQHaEb?w=323&h=193&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+        alt=""
+      />
+      <img
+        src="https://th.bing.com/th/id/OIP.JItfGXxlznJRry5rQFEs5wHaFI?w=242&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+        alt=""
+      />
+      <img
+        src="https://th.bing.com/th/id/OIP.2NaenA5vUQcxkdWWCk4iqAHaEK?w=256&h=150&c=6&o=7&dpr=1.3&pid=1.7&rm=3"
+        alt=""
+      />
+    </div>
+
+    <div id="svgBox">
+      <svg>
+        <path
+          d="M 10 100 Q 500 100 990 100"
+          stroke="black"
+          fill="transparent"
+        />
+      </svg>
     </div>
 
     <script
