@@ -7,12 +7,22 @@
     <style>
       .container {
         border: 1px solid black;
-        width: 500px;
+        width: 800px;
         padding: 15px;
+        backdrop-filter: blur(12px);
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
       #box {
         display: flex;
+        flex-direction: column;
         gap: 20px;
+      }
+      body {
+        background-image: url("https://th.bing.com/th/id/R.a952fd40d71be22347cc17ab23a0f763?rik=S2asmB5UjQKBWw&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f07%2fColorful-Nature-HD-Pictures.jpg&ehk=NN8CoHQo0GPINrrDLQ7HCdqrOfa0B9lqrW5JYHckWMY%3d&risl=&pid=ImgRaw&r=0");
+        background-size: cover;
       }
     </style>
   </head>
@@ -43,6 +53,9 @@
           let container = document.createElement("div");
           container.classList.add("container");
 
+          let box2 = document.createElement("div");
+          box2.classList.add("box2");
+
           let h1 = document.createElement("h1");
           h1.innerText = `${item.name.common}`;
 
@@ -52,13 +65,25 @@
           let img = document.createElement("img");
           img.src = `${item.flags.png}`;
 
-          container.appendChild(h1);
-          container.appendChild(para);
+          let week = document.createElement("h2");
+          week.innerText = `${item.startOfWeek}`;
+
+          let region = document.createElement("h4");
+          region.innerText = `${item.subregion}`;
+
+          let time = document.createElement("p");
+          time.innerText = `${item.timezones[0]}`;
+
           container.appendChild(img);
+          box2.appendChild(h1);
+          box2.appendChild(para);
+          box2.appendChild(week);
+          box2.appendChild(region);
+          box2.appendChild(time);
+          container.appendChild(box2);
           box.appendChild(container);
         });
       }
-
       displaydata();
     </script>
   </body>
