@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>API Documentation🌐</h1>
+    <p>Below has API data</p>
+
+    <div id="box"></div>
+
+    <script>
+      async function apihandling() {
+        const API = "https://restcountries.com/v3.1/name/russia";
+        try {
+          const response = await fetch(API);
+          const data = await response.json();
+          displaydata(data);
+          console.log(data);
+        } catch (error) {
+          console.log("Error has occured", error.message);
+        }
+      }
+
+      apihandling();
+
+      function displaydata(data) {
+        let box = document.querySelector("#box");
+        box.innerHTML = "";
+
+        data.forEach((item) => {
+          let container = document.createElement("div");
+          container.classList.add("container");
+
+          let name = document.createElement("h1");
+          name.innerText = `${item.name.common}`;
+
+          let img = document.createElement("img");
+          img.src = `${item.flags.png}`;
+
+          let img4 = document.createElement("img");
+          img4.src = `${item.flags.svg}`;
+
+          let img2 = document.createElement("img");
+          img2.src = `${item.maps.googleMaps}`;
+
+          let img3 = document.createElement("img");
+          img3.src = `${item.coatOfArms.png}`;
+
+          let language = document.createElement("p");
+          language.innerText = `${item.region}`;
+
+          let timezones = document.createElement("p");
+          timezones.innerText = `${item.timezones[1]}`;
+
+          container.appendChild(name);
+          container.appendChild(img);
+          container.appendChild(img2);
+          container.appendChild(img3);
+          container.appendChild(img4);
+          container.appendChild(language);
+          container.appendChild(timezones);
+
+          box.appendChild(container);
+        });
+      }
+    </script>
+  </body>
+</html>
