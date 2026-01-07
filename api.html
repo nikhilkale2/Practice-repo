@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API</title>
+    <style>
+      .container {
+        border: 1px solid black;
+        width: 500px;
+        padding: 15px;
+      }
+      #box {
+        display: flex;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>API Documentation🌐</h1>
+    <p>API Documentation page</p>
+    <div id="box"></div>
+    <script>
+      const API = "https://restcountries.com/v3.1/name/india";
+
+      async function apiHandling() {
+        try {
+          const response = await fetch(API);
+          const data = await response.json();
+          displaydata(data);
+          console.log(data);
+        } catch (error) {
+          console.log("Error is happen");
+        }
+      }
+      apiHandling();
+
+      function displaydata(data) {
+        let box = document.querySelector("#box");
+        box.innerHTML = "";
+
+        data.forEach((item) => {
+          let container = document.createElement("div");
+          container.classList.add("container");
+
+          let h1 = document.createElement("h1");
+          h1.innerText = `${item.name.common}`;
+
+          let para = document.createElement("p");
+          para.innerText = `${item.region}`;
+
+          let img = document.createElement("img");
+          img.src = `${item.flags.png}`;
+
+          container.appendChild(h1);
+          container.appendChild(para);
+          container.appendChild(img);
+          box.appendChild(container);
+        });
+      }
+
+      displaydata();
+    </script>
+  </body>
+</html>
