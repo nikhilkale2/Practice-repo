@@ -13,3 +13,59 @@ ol li {
   font-size: 2em;
   color: red;
 }
+
+.H1 {
+  color: blue;
+  position: relative;
+  bottom: 450px;
+  left: 850px;
+  width: max-content;
+}
+
+.H1::after {
+  content: "";
+  background: linear-gradient(145deg, red, deeppink, deepskyblue, green, gold);
+  border-radius: 30px;
+  width: 0;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+}
+.H1:hover::after {
+  width: 100%;
+}
+
+.box {
+  padding: 20px 50px;
+  position: relative;
+  left: 120px;
+  bottom: 150px;
+  border: none;
+  /*outline: none;
+  */
+  border-radius: 40px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box::after {
+  content: "";
+  position: absolute;
+  width: 102%;
+  height: 107%;
+  border-radius: 40px;
+  background: linear-gradient(to bottom right, #008cff, #e100ff);
+  z-index: -1;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
+.box:hover {
+  z-index: 0;
+  color: white;
+}
