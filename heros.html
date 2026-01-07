@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        border: 2px solid black;
+        width: 430px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      .container img {
+        width: 400px;
+        height: 300px;
+      }
+      #box {
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+
+    <script>
+      const API = "https://akabab.github.io/superhero-api/api/all.json";
+      async function apihandling() {
+        try {
+          const response = await fetch(API);
+          const data = await response.json();
+          const slicedata = data.slice(0, 15);
+          console.log(slicedata);
+          displaydata(slicedata);
+        } catch (error) {
+          console.log(error.message);
+        }
+      }
+      apihandling();
+
+      function displaydata(slicedata) {
+        let box = document.querySelector("#box");
+        box.innerHTML = "";
+
+        slicedata.forEach((item) => {
+          let container = document.createElement("div");
+          container.classList.add("container");
+
+          let name = document.createElement("h1");
+          name.innerText = `${item.biography.fullName}`;
+
+          let speed = document.createElement("p");
+          speed.innerText = `${item.powerstats.speed}`;
+
+          let power = document.createElement("p");
+          power.innerText = `${item.powerstats.power}`;
+
+          let strength = document.createElement("p");
+          strength.innerText = `${item.powerstats.strength}`;
+
+          let gender = document.createElement("p");
+          gender.innerText = `${item.appearance.gender}`;
+
+          let img = document.createElement("img");
+          img.src = `${item.images.lg}`;
+
+          container.appendChild(img);
+          container.appendChild(name);
+          container.appendChild(speed);
+          container.appendChild(power);
+          container.appendChild(strength);
+          container.appendChild(gender);
+
+          box.appendChild(container);
+        });
+      }
+    </script>
+  </body>
+</html>
