@@ -92,7 +92,8 @@ nav a::after {
   position: absolute;
   background: linear-gradient(145deg, blue, aqua, darkblue);
   width: 0;
-  height: 2px;
+  height: 4px;
+  border-radius: 30px;
   bottom: 0;
   left: 0;
   transition: all 0.5s ease-in-out;
@@ -100,6 +101,10 @@ nav a::after {
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
 }
 nav a:hover::after {
   width: 100%;
