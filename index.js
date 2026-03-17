@@ -61,3 +61,10 @@ let str3 = "World";
 
 let result = str1.concat(str2, str3);
 console.log(result);
+
+let n = 0;
+
+if (n < 3) {
+  n++;
+  console.log(n);
+}
